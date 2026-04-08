@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XLeRobot-Pro | Build Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="ambient-blob blob-cyan"></div>
+    <div class="ambient-blob blob-purple"></div>
+
+
+    <nav class="top-nav">
+        <div class="nav-content">
+            <a href="index.html" class="brand">
+                <div class="brand-dot"></div>
+                XLeRobot-Pro
+            </a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Overview</a>
+                <a href="components.html" class="nav-link">Components</a>
+                <a href="build-guide.html" class="nav-link active">Build Guide</a>
+                <a href="software.html" class="nav-link">Software</a>
+            </div>
+            <div class="nav-actions">
+                <a href="https://github.com/Vector-Wangel/XLeRobot" target="_blank" class="btn-neon btn-github">GitHub ↗</a>
+                <a href="https://arxiv.org/abs/YOUR_ARXIV_ID_HERE" target="_blank" class="btn-neon btn-arxiv">arXiv ↗</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-container">
+        
+        <header class="page-header">
+            <span class="tech-badge">3-Bus Architecture</span>
+            <h1>Build & Calibration Guide</h1>
+            <p>Consolidated instructions for print, assembly, wiring, and physical validation for the dual-arm XLeRobot platform.</p>
+        </header>
+
+        <div class="alert-box" style="position: relative; padding: 1.25rem 1.5rem 1.25rem 2.5rem; border-radius: 12px; background: #fffbeb; border: 1px solid #fde68a; color: #b45309; overflow: hidden; margin-bottom: 2rem;">
+            <div style="position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: #f59e0b;"></div>
+            <strong>CAUTION:</strong> This page documents a <strong>3-bus draft architecture</strong>. Some older pages still describe a shared/2-bus layout. For this build variant, follow this page exclusively.
+        </div>
+
+        <section class="card neon-hover-cyan">
+            <h2>1. Build Overview</h2>
+            <p>This guide walks you through building an XLeRobot platform with 2x SO-101 follower arms, a neck/head assembly, omni-wheel base, and an NVIDIA Jetson compute node.</p>
+            
+            <h3 class="mt-4">The 3-Bus Separation</h3>
+            <p>We use three independent motor buses to simplify wiring, isolate power faults, and make debugging significantly easier.</p>
+            
+            <div class="table-container mt-4 mb-4">
+                <table class="tech-table">
+                    <thead>
+                        <tr><th>Bus</th><th>Subsystem</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Bus 1</strong></td><td>Left arm</td></tr>
+                        <tr><td><strong>Bus 2</strong></td><td>Right arm</td></tr>
+                        <tr><td><strong>Bus 3</strong></td><td>Neck and wheel base</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            
+        </section>
+
+        <section class="card">
+            <h2>2. Print Settings</h2>
+            <p>Start from your baseline PLA profile. Parts were designed for and tested on consumer printers (e.g., Bambu A1, Prusa XL). <a href="#" class="text-neon">Download the pre-configured XLeRobot Print Profiles (.3mf) ↗</a> to get started immediately.</p>
+
+            <div class="grid-2 mt-4">
+                <div class="card" style="padding: 1.5rem; margin: 0; background: #f8fafc;">
+                    <h3 style="font-size: 1.1rem;">Neck & Wheel Base</h3>
+                    <p style="font-size: 0.9rem;">Structural parts requiring high rigidity.</p>
+                    <ul style="font-size: 0.9rem; padding-left: 1.25rem;">
+                        <li><strong>Perimeters:</strong> 4</li>
+                        <li><strong>Solid Layers:</strong> 5-6 top/bottom</li>
+                        <li><strong>Infill:</strong> 25-35% Gyroid (35% for motor mounts/neck)</li>
+                        <li><strong>Layer Height:</strong> 0.20 mm</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="padding: 1.5rem; margin: 0; background: #f8fafc;">
+                    <h3 style="font-size: 1.1rem;">Arm Joints (SO-101)</h3>
+                    <p style="font-size: 0.9rem;">High dimensional accuracy required.</p>
+                    <ul style="font-size: 0.9rem; padding-left: 1.25rem;">
+                        <li><strong>Perimeters:</strong> 4</li>
+                        <li><strong>Solid Layers:</strong> 5 top/bottom</li>
+                        <li><strong>Infill:</strong> 20-30% Gyroid (30% for joint housings)</li>
+                        <li><strong>Layer Height:</strong> 0.16-0.20 mm</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="alert-box mt-4" style="position: relative; padding: 1.25rem 1.5rem 1.25rem 2.5rem; border-radius: 12px; background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; overflow: hidden;">
+                <div style="position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: #3b82f6;"></div>
+                <strong>NOTE:</strong> The wheel-base connector may need <strong>Z scaling only</strong> in your slicer to properly balance the load across the omni-wheels and cart wheels.
+            </div>
+        </section>
+
+        <section class="card neon-hover-purple">
+            <h2>3. Assembly</h2>
+            
+            <h3 class="mt-4">A) Cart & Wheel Base</h3>
+            <p>Start by building the rolling structure using the <a href="#" class="text-neon">IKEA RÅSKOG Assembly Manual ↗</a>, then proceed directly to the <a href="#" class="text-neon">XLeRobot Wheel-Base Integration Steps ↗</a>.</p>
+            <ul style="padding-left: 1.5rem;">
+                <li>Keep omni-wheel orientation exactly as documented.</li>
+                <li>Do not finalize cable routing through the cart yet. Leave access for motor extensions and USB data.</li>
+            </ul>
+
+            <h3 class="mt-4">B) Arms (Joints 1-5) & Neck</h3>
+            <p>Complete the <a href="#" class="text-neon">SO-101 Follower Arm Assembly ↗</a> for both the left and right arms. <strong>Crucial step:</strong> Before attaching the gripper to joint 5, install the wrist camera attachment to avoid having to reopen the wrist stack later.</p>
+
+            <div class="media-placeholder mt-4" style="height: 220px; border-color: var(--neon-purple);">
+                <div class="play-icon" style="border-color: var(--neon-purple);"></div>
+                <span style="font-size: 0.8rem; color: var(--neon-purple);">[ VIDEO: WRIST_CAMERA_ATTACHMENT_GUIDE.MP4 ]</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>4. Motor Configuration & IDs</h2>
+            <p>Configure motors <em>before</em> final cable management and hard mounting. Set IDs and baudrates using <a href="#" class="text-neon">Bambot (GUI) ↗</a> or the <a href="#" class="text-neon">LeRobot CLI Configurator ↗</a>. <strong>Many motors ship with default ID 1. ID assignment must be unique per bus.</strong></p>
+
+            <div class="table-container mt-4">
+                <table class="tech-table">
+                    <thead>
+                        <tr><th>Bus</th><th>Recommended IDs</th><th>Mapping Notes</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Bus 1 (Left Arm)</strong></td><td>1-6</td><td>SO-101 follower mapping</td></tr>
+                        <tr><td><strong>Bus 2 (Right Arm)</strong></td><td>1-6</td><td>Valid because bus is separated</td></tr>
+                        <tr><td><strong>Bus 3 (Neck & Wheels)</strong></td><td>7-11</td><td>7-8 Neck, 9-11 Wheels</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="terminal-box mt-4">
+                <div class="terminal-header">
+                    <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                    <span>Identify Motor Ports</span>
+                </div>
+                <div class="terminal-body">
+                    <span style="color: #64748b;"># Run this to identify your active serial ports before assigning IDs</span><br>
+                    <span style="color: #cbd5e1;">$</span> python lerobot/find_port.py<br><br>
+                    <span style="color: #64748b;"># On Linux, you may need to grant serial permissions:</span><br>
+                    <span style="color: #cbd5e1;">$</span> sudo chmod 666 <span style="color: #fcd34d;">/dev/ttyACM0</span>
+                </div>
+            </div>
+            
+            <div class="alert-box mt-4" style="position: relative; padding: 1.25rem 1.5rem 1.25rem 2.5rem; border-radius: 12px; background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; overflow: hidden;">
+                <div style="position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: #22c55e;"></div>
+                <strong>TIP:</strong> Label each motor with a marker after configuration (e.g. L-1, R-1, B-7). When wiring, you need to know exactly which motor goes to which control board.
+            </div>
+        </section>
+
+        <section class="card neon-hover-pink">
+            <h2>5. Jetson Placement & Wiring</h2>
+            <p>Mount the Jetson at the base of the neck or in the center storage shell area to keep mass low for stability and minimize cable length to the controller boards.</p>
+
+            
+
+            <h3 class="mt-4">Power & Camera Routing</h3>
+            <ul style="padding-left: 1.5rem;">
+                <li><strong>Power:</strong> Mount the battery upright. Use separate fused outputs for the left arm, right arm, neck/wheel bus, and Jetson power path. Add strain relief.</li>
+                <li><strong>Wrist Cameras:</strong> Route each cable along its arm with full-motion slack. Secure at intervals (Velcro/clips).</li>
+                <li><strong>Head Camera:</strong> Route through the hollow neck, leaving pan/tilt slack at the head joint.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>6. Hardware Calibration & Validation</h2>
+            <p>Before moving on to the software stack, you must validate your physical assembly. This ensures that motor IDs are correct, wiring is secure, and there are no mechanical defects affecting the Inverse Kinematics (IK) solver.</p>
+
+            <h3 class="mt-4">A) Joint Control Sanity Check</h3>
+            <p>Test all joints to ensure the buses are wired properly and no motors are skipped or reversed.</p>
+            <div class="terminal-box mt-2 mb-4">
+                <div class="terminal-header">
+                    <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                    <span>Test Joint Movements</span>
+                </div>
+                <div class="terminal-body">
+                    <span style="color: #cbd5e1;">$</span> python 0_so100_keyboard_joint_control.py
+                </div>
+            </div>
+
+            <h3 class="mt-4">B) Mechanical IK Calibration</h3>
+            <p>The analytical IK solver assumes standard SO-101 geometry. Command the arm to a known position and visually confirm the gripper reaches the expected location. <strong>If consistently off, check your physical build for loose servo horns or bent brackets.</strong> There is currently no software calibration offset to fix bad mechanical assembly.</p>
+            <div class="terminal-box mt-2 mb-4">
+                <div class="terminal-header">
+                    <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                    <span>Verify IK Accuracy</span>
+                </div>
+                <div class="terminal-body">
+                    <span style="color: #cbd5e1;">$</span> python 1_so100_keyboard_ee_control.py
+                </div>
+            </div>
+
+            <h3 class="mt-4">C) USB Camera Connection Check</h3>
+            <p>Verify your physical camera wiring is recognized by the OS (typically even-numbered devices like <code>/dev/video0</code>, <code>/dev/video2</code>).</p>
+            <div class="terminal-box mt-2">
+                <div class="terminal-header">
+                    <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                    <span>Test Camera Feeds</span>
+                </div>
+                <div class="terminal-body">
+                    <span style="color: #64748b;"># List video devices</span><br>
+                    <span style="color: #cbd5e1;">$</span> ls /dev/video*<br><br>
+                    <span style="color: #64748b;"># Quick camera feed test</span><br>
+                    <span style="color: #cbd5e1;">$</span> python -c "import cv2; cap = cv2.VideoCapture(0); ret, frame = cap.read(); print('OK' if ret else 'FAIL'); cap.release()"
+                </div>
+            </div>
+        </section>
+
+        <section class="card" style="border-left: 4px solid var(--neon-cyan);">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <h2 style="margin: 0;">Having Assembly Issues?</h2>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem;">If your arm wobbles, wheels aren't straight, or gear noises persist, check our hardware diagnostics.</p>
+                </div>
+                <a href="troubleshooting.html" class="btn-neon" style="font-size: 0.85rem; padding: 0.5rem 1rem; border: 1px solid var(--neon-cyan); color: var(--neon-cyan); background: transparent;">Assembly Troubleshooting ➔</a>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 4rem 0 2rem 0;">
+            <p style="color: var(--text-body); font-size: 0.95rem; margin-bottom: 1rem;">Hardware validated? Move on to software configuration.</p>
+            <a href="software.html" class="btn-neon btn-github" style="display: inline-block; padding: 0.75rem 2rem; font-size: 1.1rem; background: var(--text-main); color: var(--bg-page);">Next Step: Software Setup ↗</a>
+        </div>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XLerobot | Guidelines</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="ambient-blob blob-purple"></div>
+
+    <nav class="top-nav">
+        <div class="nav-content">
+            <div class="brand"><div class="brand-dot"></div>XLerobot</div>
+            <div class="nav-links">
+                <a href="index.html">Overview</a>
+                <a href="components.html">Components</a>
+                <a href="guidelines.html" class="active">Guidelines</a>
+                <a href="templates.html">Templates</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-container">
+        <div class="page-header">
+            <h1>Writing Protocol</h1>
+            <p>These standards keep the docs consistent, readable, and highly practical.</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="card neon-hover-purple">
+                <h2 class="card-title">01. Direct Tone</h2>
+                <p>Say what to do and explain why. No filler words. Avoid saying "just" or "simply". Define acronyms immediately.</p>
+            </div>
+            <div class="card neon-hover-cyan">
+                <h2 class="card-title">02. Verification</h2>
+                <p>Commands must be copy-pasteable. Every setup guide must end with a Verification section showing expected success states.</p>
+            </div>
+            <div class="card neon-hover-pink">
+                <h2 class="card-title">03. Tested On</h2>
+                <p>Always log your environment at the top of a tutorial. Example: Ubuntu 22.04, Python 3.10, STS3215 servos.</p>
+            </div>
+        </div>
+
+        <div class="alert-box danger mt-4">
+            <div class="alert-accent"></div>
+            <strong>DANGER:</strong> Use this callout style for actions that can cause physical hardware damage or data loss.
+        </div>
+    </main>
+</body>
+</html>

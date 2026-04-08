@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XLerobot | Components</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="ambient-blob blob-cyan"></div>
+
+    <nav class="top-nav">
+        <div class="nav-content">
+            <div class="brand"><div class="brand-dot"></div>XLerobot</div>
+            <div class="nav-links">
+                <a href="index.html">Overview</a>
+                <a href="components.html" class="active">Components</a>
+                <a href="guidelines.html">Guidelines</a>
+                <a href="templates.html">Templates</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-container">
+        <div class="page-header">
+            <h1>Documentation Components</h1>
+            <p>Standardized visual assets for displaying technical data clearly.</p>
+        </div>
+
+        <section class="card component-section">
+            <h2>Bill of Materials (BOM)</h2>
+            <div class="table-container mt-4">
+                <table class="tech-table">
+                    <thead>
+                        <tr><th>Part ID</th><th>Qty</th><th>Notes</th><th>Link</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>STS3215 Servo</td><td>14</td><td>Flash ID before assembly</td><td><a href="#" class="text-neon">Spec</a></td></tr>
+                        <tr><td>Compute Node</td><td>1</td><td>Ubuntu 22.04 LTS</td><td><a href="#" class="text-neon">Vendor</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card component-section">
+            <h2>Terminal Output</h2>
+            <p>Use the dark terminal component to show expected logs and software responses.</p>
+            <div class="terminal-box mt-4">
+                <div class="terminal-header">
+                    <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                    <span>Expected Output: Teleop Node</span>
+                </div>
+                <div class="terminal-body">
+                    <span class="log-info">[INFO]</span> Successfully connected to /dev/ttyACM0<br>
+                    <span class="log-info">[INFO]</span> Publishing joint states at 50Hz
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

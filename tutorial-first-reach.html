@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial: First Reach | XLeRobot-Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="ambient-blob blob-cyan"></div>
+
+    <nav class="top-nav">
+        <div class="nav-content">
+            <a href="index.html" class="brand" style="text-decoration: none;">
+                <div class="brand-dot"></div>
+                XLeRobot-Pro
+            </a>
+            <div class="nav-menu">
+                <a href="software.html" class="nav-link">← Back to Software</a>
+            </div>
+            <div class="nav-actions">
+                <a href="https://github.com/Minko82/xlerobot-pro" target="_blank" class="btn-neon btn-github">GitHub ↗</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-container">
+        
+        <header class="page-header">
+            <span class="tech-badge">Tutorial 01</span>
+            <h1>First Reach: Cartesian Control</h1>
+            <p>Move the gripper to a specific coordinate using Inverse Kinematics (IK) and keyboard input.</p>
+        </header>
+
+        <div class="grid-2 mb-4">
+            <section class="card" style="margin: 0;">
+                <h2 style="font-size: 1.1rem; color: var(--neon-cyan);">Outcome</h2>
+                <p style="font-size: 0.95rem;">Successfully navigate the gripper to a physical object on your desk, confirming the full IK-to-Servo control pipeline is functional.</p>
+                
+                <h2 style="font-size: 1.1rem; color: var(--neon-cyan); margin-top: 1.5rem;">Concepts</h2>
+                <ul style="font-size: 0.9rem; padding-left: 1.25rem;">
+                    <li>End-Effector (EE) vs. Joint Control</li>
+                    <li>Analytical Inverse Kinematics</li>
+                    <li>Real-time Serial Communication</li>
+                </ul>
+            </section>
+
+            <section class="card" style="margin: 0; border-left: 4px solid var(--neon-purple);">
+                <h2 style="font-size: 1.1rem;">Prerequisites</h2>
+                <ul style="font-size: 0.9rem; padding-left: 1.25rem;">
+                    <li><code>xlerobot-pro</code> repository installed.</li>
+                    <li>Motors configured with unique IDs (1-6).</li>
+                    <li><strong>Verified:</strong> Joint control script runs without errors.</li>
+                </ul>
+                <div style="margin-top: 1rem; padding: 0.5rem; background: #f8fafc; border-radius: 8px; font-size: 0.85rem; text-align: center;">
+                    ⏱ <strong>Estimated Time:</strong> 10–15 Minutes
+                </div>
+            </section>
+        </div>
+
+        <section class="card">
+            <h2>Instructions</h2>
+
+            <h3 class="mt-4">1. Grant Serial Permissions</h3>
+            <p>Ensure your compute node has permission to talk to the motor controllers over USB.</p>
+            <div class="terminal-box mt-2 mb-4">
+                <div class="terminal-header">
+                    <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                    <span>Terminal</span>
+                </div>
+                <div class="terminal-body">
+                    <span style="color: #64748b;"># Allow access to all ACM devices</span><br>
+                    <span style="color: #cbd5e1;">$</span> sudo chmod 666 /dev/ttyACM*
+                </div>
+            </div>
+
+            <h3 class="mt-4">2. Launch the EE Control Script</h3>
+            <p>Run the script that initializes the Analytical IK solver and waits for keyboard input.</p>
+            <div class="terminal-box mt-2 mb-4">
+                <div class="terminal-header">
+                    <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                    <span>Terminal</span>
+                </div>
+                <div class="terminal-body">
+                    <span style="color: #cbd5e1;">$</span> python 1_so100_keyboard_ee_control.py
+                </div>
+            </div>
+
+            <h3 class="mt-4">3. Reach a Physical Target</h3>
+            <p>Place a small object (like a cup or bottle) approximately 15-20cm in front of the robot base.</p>
+            
+            <div class="table-container mt-2">
+                <table class="tech-table">
+                    <thead>
+                        <tr><th>Key</th><th>Action</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>W / S</strong></td><td>Move Forward / Backward (X-axis)</td></tr>
+                        <tr><td><strong>A / D</strong></td><td>Move Left / Right (Y-axis)</td></tr>
+                        <tr><td><strong>R / F</strong></td><td>Move Up / Down (Z-axis)</td></tr>
+                        <tr><td><strong>Space</strong></td><td>Toggle Gripper (Open/Close)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="alert-box mt-4" style="background: #f0fdf4; border-color: #bbf7d0; color: #15803d;">
+                <strong>PRO TIP:</strong> Start with small taps. The script calculates the "Goal Pose" in Cartesian space and the IK solver instantly snaps the joints to reach it.
+            </div>
+        </section>
+
+        <section class="card neon-hover-purple">
+            <h2>Expected Output & Validation</h2>
+            <div class="grid-2 mt-4">
+                <div style="border: 1px solid var(--border-light); padding: 1rem; border-radius: 8px;">
+                    <strong style="color: var(--neon-purple);">Physical Behavior</strong>
+                    <p style="font-size: 0.9rem; margin-top: 0.25rem;">The arm should move in straight lines relative to the table. Accuracy should be within 1–2 cm of the target object.</p>
+                </div>
+                <div style="border: 1px solid var(--border-light); padding: 1rem; border-radius: 8px;">
+                    <strong style="color: var(--neon-purple);">Software Feedback</strong>
+                    <p style="font-size: 0.9rem; margin-top: 0.25rem;">The terminal will print live [X, Y, Z] coordinates. Ensure the coordinates update as you press keys.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--dark-surface); border-radius: 12px; border: 1px solid #e11d48;">
+                <h4 style="color: #fb7185; margin-top: 0;">Troubleshooting</h4>
+                <p style="font-size: 0.9rem; color: #fda4af;"><strong>Arm jerks or moves wildly?</strong> This is usually a Motor ID mismatch or a reversed servo horn. Double check the <strong>Motor Configuration</strong> guide.</p>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 4rem 0 2rem 0;">
+            <p style="color: var(--text-body); font-size: 0.95rem; margin-bottom: 1.5rem;">Pipeline verified? Let's scale up to dual-arm operations.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="#" class="btn-neon" style="background: var(--text-main); color: var(--bg-page);">Next: Dual-Arm Coordination ➔</a>
+                <a href="troubleshooting.html" class="btn-neon" style="border: 1px solid var(--border-light); background: transparent; color: var(--text-main);">Stuck? Get Help</a>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

@@ -9,15 +9,23 @@
 </head>
 <body>
     <div class="ambient-blob blob-cyan"></div>
+    <div class="ambient-blob blob-purple"></div>
 
     <nav class="top-nav">
         <div class="nav-content">
-            <div class="brand"><div class="brand-dot"></div>XLerobot</div>
-            <div class="nav-links">
-                <a href="index.html">Overview</a>
-                <a href="components.html">Components</a>
-                <a href="guidelines.html">Guidelines</a>
-                <a href="templates.html" class="active">Templates</a>
+            <a href="index.html" class="brand">
+                <div class="brand-dot"></div>
+                XLerobot
+            </a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Overview</a>
+                <a href="components.html" class="nav-link">Components</a>
+                <a href="guidelines.html" class="nav-link">Guidelines</a>
+                <a href="templates.html" class="nav-link active">Templates</a>
+            </div>
+            <div class="nav-actions">
+                <a href="https://github.com/Vector-Wangel/XLeRobot" target="_blank" class="btn-neon btn-github">GitHub ↗</a>
+                <a href="https://arxiv.org/abs/YOUR_ARXIV_ID_HERE" target="_blank" class="btn-neon btn-arxiv">arXiv ↗</a>
             </div>
         </div>
     </nav>
@@ -25,12 +33,12 @@
     <main class="page-container">
         <div class="page-header">
             <h1>Page Templates</h1>
-            <p>Do not freestyle layouts. Copy the relevant Markdown structure below for your page.</p>
+            <p>Copy the relevant Markdown structure below for your page. Do not freestyle layouts.</p>
         </div>
 
         <section class="template-block">
             <div class="template-header">
-                <h2>1. Setup Guide</h2>
+                <h2>Setup Guide Template</h2>
                 <span class="tech-badge">Installation</span>
             </div>
 <pre><code>## Goal
@@ -38,6 +46,11 @@
 
 ## Prerequisites
 - [Prerequisite 1]
+
+## Tested on
+> **Date:** YYYY-MM-DD
+> **Hardware:** ...
+> **Software:** ...
 
 ## Steps
 ### 1. First step
@@ -49,20 +62,25 @@
 
         <section class="template-block mt-4">
             <div class="template-header">
-                <h2>2. Lab Note</h2>
-                <span class="tech-badge purple">Engineering Log</span>
+                <h2>Tutorial Template</h2>
+                <span class="tech-badge purple">Hands-on</span>
             </div>
-<pre><code>## Date
-YYYY-MM-DD
+<pre><code>## Outcome
+What you’ll achieve.
 
-## What I worked on
-[Brief scope of the session.]
+## Concepts used
+- Concept 1
 
-## Problems found
-[What went wrong or was unexpected.]
+## Steps
+### 1. First step
 
-## Evidence
-[Photos, logs, screenshots, video clips.]</code></pre>
+## Expected output
+What success looks like.</code></pre>
+        </section>
+
+        <section class="card mt-4">
+            <h2>Learning Path (Golden Path)</h2>
+            <p>Phase 1: Build → Phase 2: Software setup → Phase 3: First teleoperation → Phase 4: Advanced capabilities (VLA, RL, etc.).</p>
         </section>
     </main>
 </body>

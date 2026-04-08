@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XLerobot | Overview</title>
+    <title>XLerobot | Platform Overview</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -13,36 +13,103 @@
 
     <nav class="top-nav">
         <div class="nav-content">
-            <div class="brand">
+            <a href="index.html" class="brand">
                 <div class="brand-dot"></div>
-                XLerobot
+                XLeRobot-Pro
+            </a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link active">Overview</a>
+                <a href="components.html" class="nav-link">Components</a>
+                <a href="guidelines.html" class="nav-link">Guidelines</a>
+                <a href="templates.html" class="nav-link">Templates</a>
             </div>
-            <div class="nav-links">
-                <a href="index.html" class="active">Overview</a>
-                <a href="components.html">Components</a>
-                <a href="guidelines.html">Guidelines</a>
-                <a href="templates.html">Templates</a>
-                <a href="https://github.com/Vector-Wangel/XLeRobot" target="_blank" class="btn-neon">GitHub ↗</a>
+            <div class="nav-actions">
+                <a href="https://github.com/Vector-Wangel/XLeRobot" target="_blank" class="btn-neon btn-github">GitHub ↗</a>
+                <a href="https://arxiv.org/abs/YOUR_ARXIV_ID_HERE" target="_blank" class="btn-neon btn-arxiv">arXiv ↗</a>
             </div>
         </div>
     </nav>
 
     <main class="page-container">
+        
         <header class="hero">
-            <span class="tech-badge">v0.0.1 // Dual-Arm Config</span>
-            <h1 class="hero-title">The Operator Manual</h1>
-            <p class="hero-desc">Build, run, and understand XLerobot. Tested workflows, golden-path guides, and honest engineering notes—highly structured for absolute clarity.</p>
+            <span class="tech-badge">Open-Source Research Platform</span>
+            <h1 class="hero-title">Democratizing Embodied AI.</h1>
+            <p class="hero-desc">XLeRobot-Pro is a highly capable, $1,200 bimanual mobile manipulator. Designed for researchers and labs to rapidly deploy imitation learning, VLA models, and autonomous robotic agents.</p>
         </header>
 
-        <section class="card">
-            <h2>Project Abstract</h2>
-            <p>XLerobot is an open-source, dual-arm mobile household robot built on the <a href="https://github.com/huggingface/lerobot" class="text-neon">LeRobot framework</a>. It combines affordable hardware (~$660 USD) with modern AI capabilities—teleoperation, imitation learning, reinforcement learning, and vision-language-action models.</p>
+        <div class="hero-image-wrapper" style="margin-bottom: 4rem;">
+            <div class="media-placeholder" style="height: 450px; border-color: var(--neon-cyan); box-shadow: 0 15px 0px var(--neon-cyan-glow);">
+                <span style="font-size: 3rem; margin-bottom: 15px;">🤖</span>
+                <span style="font-size: 1rem; color: var(--neon-cyan); letter-spacing: 2px; font-weight: 600;">[ HERO: XLEROBOT_SYSTEM_OVERVIEW.JPG ]</span>
+            </div>
+        </div>
+
+        <section class="card neon-hover-cyan">
+            <h2>Why XLeRobot-Pro?</h2>
+            <p>The barrier to entry for advanced robotics research has traditionally been gated by six-figure hardware. XLerobot bridges the gap between simulation and reality by providing a robust, highly reproducible physical platform.</p>
+            <p>By leveraging mostly 3D-printed components, affordable STS3215 servos, and an IKEA RÅSKOG mobile base, labs can scale their data collection pipelines and deploy fleet-level reinforcement learning without massive capital constraints.</p>
             
-            <div class="media-placeholder mt-4">
-                <div class="play-icon"></div>
-                <span>SYS.IMG.01 - XLEROBOT_RENDER_HIGH_RES.JPG</span>
+            <div class="mt-4" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <span class="tech-badge purple">Teleoperation</span>
+                <span class="tech-badge">Imitation Learning</span>
+                <span class="tech-badge purple">Sim-to-Real</span>
+                <span class="tech-badge">Vision-Language-Action (VLA)</span>
             </div>
         </section>
+
+        <section class="card">
+            <h2>System Capabilities</h2>
+            <p>Native integration with the Hugging Face <strong>LeRobot</strong> framework allows for out-of-the-box data collection and policy training. See the system in action below.</p>
+            
+            <div class="grid-2 mt-4">
+                <div>
+                    <div class="media-placeholder" style="height: 220px;">
+                        <div class="play-icon"></div>
+                        <span style="font-size: 0.8rem;">SYS.VID.01 - TELEOPERATION.MP4</span>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.95rem;"><strong>Bimanual Teleoperation:</strong> Smooth leader-follower kinematics using dual SO-100 arms for high-fidelity dataset collection.</p>
+                </div>
+
+                <div>
+                    <div class="media-placeholder" style="height: 220px; border-color: var(--neon-purple);">
+                        <div class="play-icon" style="border-color: var(--neon-purple);"></div>
+                        <span style="font-size: 0.8rem; color: var(--neon-purple);">SYS.VID.02 - AUTONOMY_ACT.MP4</span>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.95rem;"><strong>Autonomous Execution:</strong> Evaluating a trained Action Chunking with Transformers (ACT) policy on a folding task.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="card neon-hover-purple">
+            <h2>Hardware Architecture</h2>
+            <p>Designed for modularity. Swap compute nodes, upgrade sensor suites, or modify the chassis parameters to fit your specific research parameters.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
+                
+                <div class="media-placeholder" style="height: 180px;">
+                    <span style="font-size: 2rem; margin-bottom: 10px;">📷</span>
+                    <span style="font-size: 0.75rem;">[ GALLERY: FRONT_PROFILE ]</span>
+                </div>
+                
+                <div class="media-placeholder" style="height: 180px;">
+                    <span style="font-size: 2rem; margin-bottom: 10px;">📷</span>
+                    <span style="font-size: 0.75rem;">[ GALLERY: SENSOR_SUITE ]</span>
+                </div>
+                
+                <div class="media-placeholder" style="height: 180px;">
+                    <span style="font-size: 2rem; margin-bottom: 10px;">📷</span>
+                    <span style="font-size: 0.75rem;">[ GALLERY: COMPUTE_DECK ]</span>
+                </div>
+
+                <div class="media-placeholder" style="height: 180px;">
+                    <span style="font-size: 2rem; margin-bottom: 10px;">📷</span>
+                    <span style="font-size: 0.75rem;">[ GALLERY: END_EFFECTOR ]</span>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 </body>
 </html>

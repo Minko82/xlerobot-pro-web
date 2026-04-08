@@ -11,7 +11,6 @@
     <div class="ambient-blob blob-cyan"></div>
     <div class="ambient-blob blob-purple"></div>
 
-
     <nav class="top-nav">
         <div class="nav-content">
             <a href="index.html" class="brand">
@@ -34,25 +33,25 @@
     <main class="page-container">
         
         <header class="page-header">
-            <span class="tech-badge" style="background: var(--neon-pink-glow); color: #be123c; border-color: var(--neon-pink);">Diagnostics & Repair</span>
+            <span class="tech-badge tech-badge-pink">Diagnostics & Repair</span>
             <h1>Troubleshooting</h1>
             <p>Find your issue by symptom. Quick diagnostic matrices are below, followed by deep-dive resolution paths.</p>
         </header>
 
-        <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem;">Quick Diagnostic Matrices</h2>
+        <h2 class="hero-title font-med mb-4">Quick Diagnostic Matrices</h2>
         
         <div class="grid-2">
-            <section class="card neon-hover-cyan" style="padding: 1.5rem; margin-bottom: 0;">
-                <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.5rem;"><span style="margin-right: 8px;">⚙️</span> Motor Issues</h3>
-                <div style="overflow-x: auto;">
-                    <table class="tech-table" style="font-size: 0.85rem;">
+            <section class="card neon-hover-cyan card-no-margin">
+                <h3 class="diag-header"><span class="diag-icon">⚙️</span> Motor Issues</h3>
+                <div class="table-container">
+                    <table class="tech-table table-small">
                         <thead>
                             <tr><th>Symptom</th><th>Quick Fix</th></tr>
                         </thead>
                         <tbody>
                             <tr><td><strong>No motors move</strong></td><td>Check 12V DC cable from battery to motor board</td></tr>
-                            <tr><td><strong>Permission denied</strong></td><td><code style="color: var(--neon-pink);">sudo chmod 666 /dev/ttyACM0</code></td></tr>
-                            <tr><td><strong>Motor count mismatch</strong></td><td>Run <code style="color: var(--neon-cyan);">find_port.py</code> and update script</td></tr>
+                            <tr><td><strong>Permission denied</strong></td><td><code class="code-pink">sudo chmod 666 /dev/ttyACM0</code></td></tr>
+                            <tr><td><strong>Motor count mismatch</strong></td><td>Run <code class="code-cyan">find_port.py</code> and update script</td></tr>
                             <tr><td><strong>Single unresponsive</strong></td><td>Re-configure ID with Bambot</td></tr>
                             <tr><td><strong>Arm jerks / wrong dir</strong></td><td>Verify IDs match the motor map</td></tr>
                             <tr><td><strong>Grinding noise</strong></td><td>Inspect servo horn alignment; replace if stripped</td></tr>
@@ -61,42 +60,42 @@
                 </div>
             </section>
 
-            <section class="card neon-hover-purple" style="padding: 1.5rem; margin-bottom: 0;">
-                <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.5rem;"><span style="margin-right: 8px;">👁️</span> Camera Issues</h3>
-                <div style="overflow-x: auto;">
-                    <table class="tech-table" style="font-size: 0.85rem;">
+            <section class="card neon-hover-purple card-no-margin">
+                <h3 class="diag-header"><span class="diag-icon">👁️</span> Camera Issues</h3>
+                <div class="table-container">
+                    <table class="tech-table table-small">
                         <thead>
                             <tr><th>Symptom</th><th>Quick Fix</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td><strong>Camera not detected</strong></td><td><code style="color: var(--neon-cyan);">ls /dev/video*</code> to check path</td></tr>
-                            <tr><td><strong>Black frame</strong></td><td>Check lens cap; test with <code style="color: var(--neon-cyan);">cv2.VideoCapture</code></td></tr>
+                            <tr><td><strong>Camera not detected</strong></td><td><code class="code-cyan">ls /dev/video*</code> to check path</td></tr>
+                            <tr><td><strong>Black frame</strong></td><td>Check lens cap; test with <code class="code-cyan">cv2.VideoCapture</code></td></tr>
                             <tr><td><strong>YOLO not tracking</strong></td><td>Verify camera index in script</td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <section class="card neon-hover-pink" style="padding: 1.5rem; margin-bottom: 0;">
-                <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.5rem;"><span style="margin-right: 8px;">💻</span> Software Issues</h3>
-                <div style="overflow-x: auto;">
-                    <table class="tech-table" style="font-size: 0.85rem;">
+            <section class="card neon-hover-pink card-no-margin">
+                <h3 class="diag-header"><span class="diag-icon">💻</span> Software Issues</h3>
+                <div class="table-container">
+                    <table class="tech-table table-small">
                         <thead>
                             <tr><th>Symptom</th><th>Quick Fix</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td><strong>Import errors</strong></td><td><code style="color: var(--neon-cyan);">pip install -e .</code> in LeRobot dir</td></tr>
-                            <tr><td><strong>Files not found</strong></td><td>Check <code style="color: var(--neon-cyan);">/model</code>, <code style="color: var(--neon-cyan);">/robots</code>, <code style="color: var(--neon-cyan);">/example</code> folders</td></tr>
-                            <tr><td><strong>Joy-Con not pairing</strong></td><td><code style="color: var(--neon-pink);">sudo apt install joycond</code>, enable Bluetooth</td></tr>
+                            <tr><td><strong>Import errors</strong></td><td><code class="code-cyan">pip install -e .</code> in repository root</td></tr>
+                            <tr><td><strong>Files not found</strong></td><td>Check <code class="code-cyan">/model</code>, <code class="code-cyan">/robots</code>, <code class="code-cyan">/example</code> folders</td></tr>
+                            <tr><td><strong>Joy-Con not pairing</strong></td><td><code class="code-pink">sudo apt install joycond</code>, enable Bluetooth</td></tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <section class="card neon-hover-cyan" style="padding: 1.5rem; margin-bottom: 0;">
-                <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.5rem;"><span style="margin-right: 8px;">🔧</span> Assembly Issues</h3>
-                <div style="overflow-x: auto;">
-                    <table class="tech-table" style="font-size: 0.85rem;">
+            <section class="card neon-hover-cyan card-no-margin">
+                <h3 class="diag-header"><span class="diag-icon">🔧</span> Assembly Issues</h3>
+                <div class="table-container">
+                    <table class="tech-table table-small">
                         <thead>
                             <tr><th>Symptom</th><th>Quick Fix</th></tr>
                         </thead>
@@ -110,18 +109,18 @@
             </section>
         </div>
 
-        <hr style="border: 0; border-top: 1px solid var(--border-light); margin: 4rem 0;">
+        <hr class="divider-large">
 
-        <section class="card" style="border-left: 4px solid var(--neon-purple);">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                <h2 style="margin: 0;">Deep Dive: Camera Not Detected</h2>
-                <span class="tech-badge purple" style="margin: 0;">Hardware / USB</span>
+        <section class="card card-accent-purple">
+            <div class="flex-between mb-4">
+                <h2 class="card-no-margin">Deep Dive: Camera Not Detected</h2>
+                <span class="tech-badge purple card-no-margin">Hardware / USB</span>
             </div>
 
-            <div class="grid-2 mt-4" style="gap: 2rem;">
+            <div class="grid-2 mt-4">
                 <div>
-                    <h3 style="font-size: 1.1rem; color: #be123c;">Symptoms</h3>
-                    <ul style="padding-left: 1.25rem; font-size: 0.95rem;">
+                    <h3 class="cause-title">Symptoms</h3>
+                    <ul class="font-small">
                         <li><code>ls /dev/video*</code> shows no entries or fewer cameras than expected.</li>
                         <li><code>cv2.VideoCapture()</code> returns <code>False</code> for <code>ret</code>.</li>
                         <li>YOLO tracking script errors with <em>“no camera found”</em>.</li>
@@ -129,8 +128,8 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 style="font-size: 1.1rem; color: #b45309;">Likely Causes</h3>
-                    <ul style="padding-left: 1.25rem; font-size: 0.95rem;">
+                    <h3 class="symptom-title">Likely Causes</h3>
+                    <ul class="font-small">
                         <li><strong>USB cable not seated:</strong> Loose connection or damaged cable.</li>
                         <li><strong>USB hub not powered:</strong> Hub can’t supply enough current for multiple cameras.</li>
                         <li><strong>Wrong device index:</strong> Camera is at a different path than the script expects.</li>
@@ -139,50 +138,50 @@
                 </div>
             </div>
 
-            <h3 class="mt-4" style="border-top: 1px solid var(--border-light); padding-top: 1.5rem;">Diagnostic & Fix Steps</h3>
+            <h3 class="mt-4 border-top-light">Diagnostic & Fix Steps</h3>
             
             <p><strong>1. Check Physical Connection:</strong> Unplug and replug the camera. Try a different USB port. Try without the USB hub (direct to PC) to isolate the issue.</p>
-            <p><strong>2. Check USB Power:</strong> If using a USB hub, make sure it’s powered. Low-power hubs may not supply enough current for multiple cameras. Try connecting the camera directly to the PC.</p>
+            <p><strong>2. Check USB Power:</strong> If using a USB hub, make sure it’s powered. Low-power hubs may not supply enough current for multiple cameras.</p>
             
-            <p class="mt-4"><strong>3. Check Device Detection:</strong> You should see even-numbered entries (<code>/dev/video0</code>, <code>/dev/video2</code>) — one per camera. If you see none, the camera isn’t detected at the OS level.</p>
+            <p class="mt-4"><strong>3. Check Device Detection:</strong> You should see even-numbered entries (<code>/dev/video0</code>, <code>/dev/video2</code>) — one per camera.</p>
             <div class="terminal-box mt-2 mb-4">
                 <div class="terminal-header">
                     <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
                     <span>List Video Devices</span>
                 </div>
                 <div class="terminal-body">
-                    <span style="color: #cbd5e1;">$</span> ls /dev/video*<br><br>
-                    <span style="color: #64748b;"># To see detailed device paths:</span><br>
-                    <span style="color: #cbd5e1;">$</span> v4l2-ctl --list-devices
+                    <span>$</span> ls /dev/video*<br><br>
+                    <span class="log-info"># To see detailed device paths:</span><br>
+                    <span>$</span> v4l2-ctl --list-devices
                 </div>
             </div>
 
-            <p class="mt-4"><strong>4. Test the Camera Directly:</strong> If this fails, try incrementing the device index (0, 1, 2…) until you find the working camera.</p>
+            <p class="mt-4"><strong>4. Test the Camera Directly:</strong> Use a one-line Python test to verify the OpenCV pipeline.</p>
             <div class="terminal-box mt-2 mb-4">
                 <div class="terminal-header">
                     <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
                     <span>Quick Camera Feed Test</span>
                 </div>
                 <div class="terminal-body">
-                    <span style="color: #cbd5e1;">$</span> python -c "import cv2; cap = cv2.VideoCapture(<span style="color: #fcd34d;">0</span>); ret, frame = cap.read(); print('OK' if ret else 'FAIL'); cap.release()"
+                    <span>$</span> python -c "import cv2; cap = cv2.VideoCapture(0); ret, frame = cap.read(); print('OK' if ret else 'FAIL'); cap.release()"
                 </div>
             </div>
 
             <div class="grid-2 mt-4">
-                <div style="background: #f0fdf4; padding: 1.25rem; border-radius: 8px; border: 1px solid #bbf7d0;">
-                    <h4 style="color: #15803d; margin-bottom: 0.5rem;">Verification Checklist</h4>
-                    <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: #166534; margin: 0;">
+                <div class="status-card-green">
+                    <h4 class="status-title-green">Verification Checklist</h4>
+                    <ul class="status-list status-list-green">
                         <li><code>ls /dev/video*</code> shows the expected number of devices.</li>
-                        <li>The Python camera test returns <strong>OK</strong> for each camera index.</li>
+                        <li>The Python camera test returns <strong>OK</strong>.</li>
                         <li>YOLO or teleoperation scripts run without camera errors.</li>
                     </ul>
                 </div>
-                <div style="background: #eff6ff; padding: 1.25rem; border-radius: 8px; border: 1px solid #bfdbfe;">
-                    <h4 style="color: #1d4ed8; margin-bottom: 0.5rem;">Prevention Tips</h4>
-                    <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: #1e40af; margin: 0;">
-                        <li>Use a <strong>powered USB hub</strong> when connecting multiple cameras.</li>
-                        <li>Always use the <strong>same USB ports</strong>—device paths change when you move cables.</li>
-                        <li>Label USB cables to avoid confusion.</li>
+                <div class="status-card-blue">
+                    <h4 class="status-title-blue">Prevention Tips</h4>
+                    <ul class="status-list status-list-blue">
+                        <li>Use a <strong>powered USB hub</strong> for multiple cameras.</li>
+                        <li>Always use the <strong>same USB ports</strong>—paths change when swapped.</li>
+                        <li>Label USB cables to avoid confusion during setup.</li>
                     </ul>
                 </div>
             </div>

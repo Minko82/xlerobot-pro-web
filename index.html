@@ -38,10 +38,10 @@
             <p class="hero-desc">XLeRobot-Pro is a highly capable, $1,200 bimanual mobile manipulator. Designed for researchers and labs to rapidly deploy imitation learning, VLA models, and autonomous robotic agents.</p>
         </header>
 
-        <div class="hero-image-wrapper" style="margin-bottom: 4rem;">
-            <div class="media-placeholder" style="height: 450px; border-color: var(--neon-cyan); box-shadow: 0 15px 0px var(--neon-cyan-glow);">
-                <span style="font-size: 3rem; margin-bottom: 15px;">🤖</span>
-                <span style="font-size: 1rem; color: var(--neon-cyan); letter-spacing: 2px; font-weight: 600;">[ HERO: XLEROBOT_SYSTEM_OVERVIEW.JPG ]</span>
+        <div class="hero-image-wrapper">
+            <div class="media-placeholder hero-size">
+                <span class="icon-large">🤖</span>
+                <span class="label-hero">[ HERO: XLEROBOT_SYSTEM_OVERVIEW.JPG ]</span>
             </div>
         </div>
 
@@ -50,7 +50,7 @@
             <p>The barrier to entry for advanced robotics research has traditionally been gated by six-figure hardware. XLeRobot-Pro bridges the gap between simulation and reality by providing a robust, highly reproducible physical platform.</p>
             <p>By leveraging mostly 3D-printed components, affordable hardware, and a mobile base, labs can scale their data collection pipelines and deploy fleet-level reinforcement learning without massive capital constraints.</p>
             
-            <div class="mt-4" style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <div class="mt-4 flex-wrap-gap">
                 <span class="tech-badge purple">Teleoperation</span>
                 <span class="tech-badge">Imitation Learning</span>
                 <span class="tech-badge purple">Sim-to-Real</span>
@@ -64,19 +64,19 @@
             
             <div class="grid-2 mt-4">
                 <div>
-                    <div class="media-placeholder" style="height: 220px;">
+                    <div class="media-placeholder video-size">
                         <div class="play-icon"></div>
-                        <span style="font-size: 0.8rem;">SYS.VID.01 - TELEOPERATION.MP4</span>
+                        <span class="label-small">SYS.VID.01 - TELEOPERATION.MP4</span>
                     </div>
-                    <p style="margin-top: 1rem; font-size: 0.95rem;"><strong>Bimanual Teleoperation:</strong> Smooth leader-follower kinematics using dual SO-100 arms for high-fidelity dataset collection.</p>
+                    <p class="mt-4 credits-text"><strong>Bimanual Teleoperation:</strong> Smooth leader-follower kinematics using dual SO-100 arms for high-fidelity dataset collection.</p>
                 </div>
 
                 <div>
-                    <div class="media-placeholder" style="height: 220px; border-color: var(--neon-purple);">
-                        <div class="play-icon" style="border-color: var(--neon-purple);"></div>
-                        <span style="font-size: 0.8rem; color: var(--neon-purple);">SYS.VID.02 - AUTONOMY_ACT.MP4</span>
+                    <div class="media-placeholder video-size purple-border">
+                        <div class="play-icon purple-border"></div>
+                        <span class="label-small text-neon purple">SYS.VID.02 - AUTONOMY_ACT.MP4</span>
                     </div>
-                    <p style="margin-top: 1rem; font-size: 0.95rem;"><strong>Autonomous Execution:</strong> Evaluating a trained Action Chunking with Transformers (ACT) policy on a folding task.</p>
+                    <p class="mt-4 credits-text"><strong>Autonomous Execution:</strong> Evaluating a trained Action Chunking with Transformers (ACT) policy on a folding task.</p>
                 </div>
             </div>
         </section>
@@ -85,62 +85,66 @@
             <h2>Hardware Architecture</h2>
             <p>Designed for modularity. Swap compute nodes, upgrade sensor suites, or modify the chassis parameters to fit your specific research parameters.</p>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
-                
-                <div class="media-placeholder" style="height: 180px;">
-                    <span style="font-size: 2rem; margin-bottom: 10px;">📷</span>
-                    <span style="font-size: 0.75rem;">[ GALLERY: FRONT_PROFILE ]</span>
+            <div class="gallery-grid">
+                <div class="media-placeholder gallery-size">
+                    <span class="icon-med">📷</span>
+                    <span class="label-small">[ GALLERY: FRONT_PROFILE ]</span>
                 </div>
                 
-                <div class="media-placeholder" style="height: 180px;">
-                    <span style="font-size: 2rem; margin-bottom: 10px;">📷</span>
-                    <span style="font-size: 0.75rem;">[ GALLERY: SENSOR_SUITE ]</span>
+                <div class="media-placeholder gallery-size">
+                    <span class="icon-med">📷</span>
+                    <span class="label-small">[ GALLERY: SENSOR_SUITE ]</span>
                 </div>
                 
-                <div class="media-placeholder" style="height: 180px;">
-                    <span style="font-size: 2rem; margin-bottom: 10px;">📷</span>
-                    <span style="font-size: 0.75rem;">[ GALLERY: COMPUTE_DECK ]</span>
+                <div class="media-placeholder gallery-size">
+                    <span class="icon-med">📷</span>
+                    <span class="label-small">[ GALLERY: COMPUTE_DECK ]</span>
                 </div>
 
-                <div class="media-placeholder" style="height: 180px;">
-                    <span style="font-size: 2rem; margin-bottom: 10px;">📷</span>
-                    <span style="font-size: 0.75rem;">[ GALLERY: END_EFFECTOR ]</span>
+                <div class="media-placeholder gallery-size">
+                    <span class="icon-med">📷</span>
+                    <span class="label-small">[ GALLERY: END_EFFECTOR ]</span>
                 </div>
-
             </div>
         </section>
 
-        <section class="card" style="background: var(--bg-page); border: 1px dashed var(--border-light); margin-top: 4rem;">
-            <h2 style="font-size: 1.25rem;">Credits & Acknowledgements</h2>
+        <section class="card card-credits">
+            <h2>Credits & Acknowledgements</h2>
             
-            <div class="grid-2 mt-4" style="gap: 2rem;">
-                <div>
-                    <h3 style="font-size: 1rem; color: var(--text-main);">Project Creators</h3>
-                    <p style="font-size: 0.9rem; line-height: 1.6;">
+            <div class="credits-grid">
+                <div class="credits-col">
+                    <h3>Project Creators</h3>
+                    <p class="credits-text">
                         <strong>XLeRobot-Pro</strong> was developed and refined by 
-                        <span style="color: var(--neon-purple);">[Creator Name/Team]</span> and 
-                        <span style="color: var(--neon-cyan);">[Creator Name/Team]</span>.
+                        <span class="text-neon purple">Artemis Shaw</span>,
+                        <span class="text-neon">Chen Liu</span>,
+                        <span class="text-neon purple">Justin Costa</span>,
+                        <span class="text-neon">Rane Gray</span>,
+                        <span class="text-neon purple">Alina Skowronek</span>,
+                        <span class="text-neon">Kevin Diaz</span>,
+                        <span class="text-neon purple">Nam Bui</span>,
+                        <span class="text-neon">Nikolaus Correll</span>.
                     </p>
                 </div>
-                <div>
-                    <h3 style="font-size: 1rem; color: var(--text-main);">Core Frameworks</h3>
-                    <ul style="font-size: 0.85rem; list-style: none; padding: 0;">
-                        <li style="margin-bottom: 0.75rem;">
+                <div class="credits-col">
+                    <h3>Core Frameworks</h3>
+                    <ul class="credits-list">
+                        <li>
                             <strong>LeRobot:</strong> Built upon the foundational work of the 
-                            <a href="https://github.com/huggingface/lerobot" target="_blank" class="text-neon" style="text-decoration: underline;">Hugging Face LeRobot team</a>.
+                            <a href="https://github.com/huggingface/lerobot" target="_blank" class="text-neon text-underline">Hugging Face LeRobot team</a>.
                         </li>
                         <li>
                             <strong>XLeRobot:</strong> Referencing the architectural design and initial implementation by 
-                            <a href="https://github.com/Vector-Wangel/XLeRobot" target="_blank" class="text-neon" style="text-decoration: underline;">Vector-Wangel</a>.
+                            <a href="https://github.com/Vector-Wangel/XLeRobot" target="_blank" class="text-neon text-underline">Vector-Wangel</a>.
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <div style="text-align: center; margin: 4rem 0 2rem 0;">
-            <p style="color: var(--text-body); font-size: 0.95rem; margin-bottom: 1rem;">Ready to start?</p>
-            <a href="build-guide.html" class="btn-neon btn-github" style="display: inline-block; padding: 0.75rem 2rem; font-size: 1.1rem; background: var(--text-main); color: var(--bg-page);">Start Building ↗</a>
+        <div class="text-center mt-large">
+            <p class="credits-text">Ready to start?</p>
+            <a href="build-guide.html" class="btn-neon btn-github btn-cta">Start Building ↗</a>
         </div>
 
     </main>

@@ -311,3 +311,411 @@ pre {
     .grid-2 { grid-template-columns: 1fr; }
     .hero-title { font-size: 2.5rem; }
 }
+
+/* --- NEW UTILITY CLASSES --- */
+
+/* Layout & Spacing */
+.mb-4 { margin-bottom: 4rem; }
+.flex-wrap-gap { display: flex; gap: 15px; flex-wrap: wrap; }
+.text-center { text-align: center; }
+.mt-large { margin-top: 4rem; }
+
+/* Media & Hero Wrappers */
+.hero-image-wrapper {
+    margin-bottom: 4rem;
+}
+
+.media-placeholder.hero-size {
+    height: 450px;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 15px 0px var(--neon-cyan-glow);
+}
+
+.media-placeholder.video-size {
+    height: 220px;
+}
+
+.media-placeholder.gallery-size {
+    height: 180px;
+}
+
+.media-placeholder.purple-border {
+    border-color: var(--neon-purple);
+}
+
+.media-placeholder .icon-large {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.media-placeholder .icon-med {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.media-placeholder .label-hero {
+    font-size: 1rem;
+    color: var(--neon-cyan);
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.media-placeholder .label-small {
+    font-size: 0.75rem;
+}
+
+.play-icon.purple-border {
+    border-color: var(--neon-purple);
+}
+
+.play-icon.purple-border::after {
+    border-left-color: var(--neon-purple);
+}
+
+/* Credits Section */
+.card-credits {
+    background: var(--bg-page);
+    border: 1px dashed var(--border-light);
+    margin-top: 4rem;
+}
+
+.card-credits h2 {
+    font-size: 1.25rem;
+}
+
+.credits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.credits-col h3 {
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+.credits-list {
+    font-size: 0.85rem;
+    list-style: none;
+    padding: 0;
+}
+
+.credits-list li {
+    margin-bottom: 0.75rem;
+}
+
+.credits-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Call to Action Button */
+.btn-cta {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    background: var(--text-main);
+    color: var(--bg-page);
+}
+
+/* --- TUTORIAL SPECIFIC CLASSES --- */
+
+/* Flexible Grids without inline styles */
+.grid-stack-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card-no-margin {
+    margin: 0;
+}
+
+.card-accent-purple {
+    border-left: 4px solid var(--neon-purple);
+}
+
+/* Status & Info Boxes */
+.info-badge-block {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.alert-success {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #15803d;
+}
+
+.troubleshoot-box {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--dark-surface);
+    border-radius: 12px;
+    border: 1px solid #e11d48;
+}
+
+.troubleshoot-box h4 {
+    color: #fb7185;
+    margin-top: 0;
+}
+
+.troubleshoot-text {
+    font-size: 0.9rem;
+    color: #fda4af;
+}
+
+/* Typography Utilities */
+.text-cyan { color: var(--neon-cyan); }
+.text-purple { color: var(--neon-purple); }
+.font-small { font-size: 0.9rem; }
+.font-med { font-size: 1.1rem; }
+
+/* --- DIAGNOSTIC & TROUBLESHOOTING UTILITIES --- */
+
+.tech-badge-pink { 
+    background: var(--neon-pink-glow); 
+    color: #be123c; 
+    border-color: var(--neon-pink); 
+}
+
+.diag-header {
+    margin-bottom: 1rem; 
+    border-bottom: 1px solid var(--border-light); 
+    padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.diag-icon { margin-right: 8px; }
+
+.table-small { font-size: 0.85rem; }
+
+.code-pink { color: var(--neon-pink); font-weight: 600; }
+.code-cyan { color: var(--neon-cyan); font-weight: 600; }
+
+.divider-large {
+    border: 0; 
+    border-top: 1px solid var(--border-light); 
+    margin: 4rem 0;
+}
+
+.flex-between {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.cause-title { font-size: 1.1rem; color: #be123c; }
+.symptom-title { font-size: 1.1rem; color: #b45309; }
+
+.border-top-light {
+    border-top: 1px solid var(--border-light); 
+    padding-top: 1.5rem;
+}
+
+/* Status Cards for Checklists */
+.status-card-green {
+    background: #f0fdf4; 
+    padding: 1.25rem; 
+    border-radius: 8px; 
+    border: 1px solid #bbf7d0;
+}
+
+.status-card-blue {
+    background: #eff6ff; 
+    padding: 1.25rem; 
+    border-radius: 8px; 
+    border: 1px solid #bfdbfe;
+}
+
+.status-title-green { color: #15803d; margin-bottom: 0.5rem; }
+.status-title-blue { color: #1d4ed8; margin-bottom: 0.5rem; }
+
+.status-list {
+    padding-left: 1.25rem; 
+    font-size: 0.9rem; 
+    margin: 0;
+}
+
+.status-list-green { color: #166534; }
+.status-list-blue { color: #1e40af; }
+
+
+/* --- COMPONENTS & BOM UTILITIES --- */
+
+.arch-card {
+    padding: 1.5rem; 
+    margin-bottom: 0;
+}
+
+.arch-card h3 {
+    font-size: 1.15rem; 
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.arch-card p {
+    font-size: 0.9rem; 
+    margin: 0;
+}
+
+.bom-header-flex {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-end; 
+    margin-bottom: 1.5rem; 
+    flex-wrap: wrap; 
+    gap: 1rem;
+}
+
+.price-tag-container {
+    text-align: right;
+}
+
+.price-amount {
+    font-family: 'Outfit', sans-serif; 
+    font-size: 2rem; 
+    font-weight: 800; 
+    color: var(--text-main); 
+    line-height: 1;
+}
+
+.media-placeholder.schematic {
+    height: 180px; 
+    border-color: var(--border-light); 
+    background: #f8fafc;
+}
+
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.font-mono { font-family: monospace; }
+
+/* --- BUILD GUIDE & ALERT UTILITIES --- */
+
+/* Alert System */
+.alert-box {
+    position: relative; 
+    padding: 1.25rem 1.5rem 1.25rem 2.5rem; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    margin-bottom: 2rem;
+    border: 1px solid;
+}
+
+.alert-accent-line {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 6px; 
+    height: 100%;
+}
+
+/* Alert Variants */
+.alert-caution { background: #fffbeb; border-color: #fde68a; color: #b45309; }
+.alert-caution .alert-accent-line { background: #f59e0b; }
+
+.alert-note { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; }
+.alert-note .alert-accent-line { background: #3b82f6; }
+
+.alert-tip { background: #f0fdf4; border-color: #bbf7d0; color: #15803d; }
+.alert-tip .alert-accent-line { background: #22c55e; }
+
+/* Print Settings Cards */
+.print-card {
+    padding: 1.5rem; 
+    margin: 0; 
+    background: #f8fafc;
+}
+
+.print-card h3 { font-size: 1.1rem; }
+.print-card p, .print-card ul { font-size: 0.9rem; }
+
+/* Footer CTA Section */
+.footer-cta {
+    border-left: 4px solid var(--neon-cyan);
+}
+
+.flex-wrap-center {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    gap: 1rem;
+}
+
+.btn-outline-cyan {
+    font-size: 0.85rem; 
+    padding: 0.5rem 1rem; 
+    border: 1px solid var(--neon-cyan); 
+    color: var(--neon-cyan); 
+    background: transparent;
+}
+
+/* --- SOFTWARE SETUP UTILITIES --- */
+
+.ascii-diagram-box {
+    background: var(--dark-surface); 
+    padding: 2rem; 
+    border-radius: 12px; 
+    overflow-x: auto; 
+    margin-top: 1.5rem; 
+    border: 1px solid var(--border-light); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.ascii-diagram-box pre {
+    font-family: monospace; 
+    color: var(--neon-cyan); 
+    background: transparent; 
+    padding: 0; 
+    box-shadow: none; 
+    border: none; 
+    font-size: 0.85rem; 
+    line-height: 1.2;
+}
+
+/* Quick Diagnostic Grid Cards */
+.diag-grid-card {
+    border: 1px solid var(--border-light); 
+    padding: 1rem; 
+    border-radius: 8px;
+}
+
+.diag-grid-card strong {
+    color: #e11d48;
+    display: block;
+}
+
+.diag-grid-card p {
+    font-size: 0.9rem; 
+    margin-bottom: 0; 
+    margin-top: 0.25rem;
+}
+
+.btn-outline-pink {
+    font-size: 0.85rem; 
+    padding: 0.5rem 1rem; 
+    border: 1px solid var(--neon-pink); 
+    color: var(--neon-pink); 
+    background: transparent;
+}

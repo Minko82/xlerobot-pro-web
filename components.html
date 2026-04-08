@@ -11,7 +11,6 @@
     <div class="ambient-blob blob-cyan"></div>
     <div class="ambient-blob blob-purple"></div>
 
-
     <nav class="top-nav">
         <div class="nav-content">
             <a href="index.html" class="brand">
@@ -43,42 +42,42 @@
             <p>XLeRobot-Pro is designed to be fully untethered, balancing compute power with battery efficiency.</p>
             
             <div class="grid-2 mt-4">
-                <div class="card neon-hover-purple" style="padding: 1.5rem; margin-bottom: 0;">
-                    <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;"><span style="margin-right: 8px;">⚡</span> Tri-Bus Power Topology</h3>
-                    <p style="font-size: 0.9rem; margin: 0;">Isolates high-transient motor loads from the Jetson Orin Nano, completely eliminating power brownouts during aggressive maneuvers.</p>
+                <div class="card arch-card neon-hover-purple">
+                    <h3><span class="diag-icon">⚡</span> Tri-Bus Power Topology</h3>
+                    <p>Isolates high-transient motor loads from the Jetson Orin Nano, completely eliminating power brownouts during aggressive maneuvers.</p>
                 </div>
                 
-                <div class="card neon-hover-cyan" style="padding: 1.5rem; margin-bottom: 0;">
-                    <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;"><span style="margin-right: 8px;">🧠</span> Embedded Autonomy</h3>
-                    <p style="font-size: 0.9rem; margin: 0;">NVIDIA Jetson Orin Nano Super provides full onboard GPU compute. No external PC tethering required for VLA models.</p>
+                <div class="card arch-card neon-hover-cyan">
+                    <h3><span class="diag-icon">🧠</span> Embedded Autonomy</h3>
+                    <p>NVIDIA Jetson Orin Nano Super provides full onboard GPU compute. No external PC tethering required for VLA models.</p>
                 </div>
 
-                <div class="card neon-hover-cyan" style="padding: 1.5rem; margin-bottom: 0;">
-                    <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;"><span style="margin-right: 8px;">👁️</span> Robust Perception</h3>
-                    <p style="font-size: 0.9rem; margin: 0;">Intel RealSense D435 RGB-D camera enabling high-fidelity SLAM navigation and vision-based bimanual manipulation.</p>
+                <div class="card arch-card neon-hover-cyan">
+                    <h3><span class="diag-icon">👁️</span> Robust Perception</h3>
+                    <p>Intel RealSense D435 RGB-D camera enabling high-fidelity SLAM navigation and vision-based bimanual manipulation.</p>
                 </div>
 
-                <div class="card neon-hover-purple" style="padding: 1.5rem; margin-bottom: 0;">
-                    <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;"><span style="margin-right: 8px;">🏗️</span> Optimized Structure</h3>
-                    <p style="font-size: 0.9rem; margin: 0;">Functionally graded 3D-printed links utilizing High-Shell topology to achieve maximum stiffness-to-weight ratio.</p>
+                <div class="card arch-card neon-hover-purple">
+                    <h3><span class="diag-icon">🏗️</span> Optimized Structure</h3>
+                    <p>Functionally graded 3D-printed links utilizing High-Shell topology to achieve maximum stiffness-to-weight ratio.</p>
                 </div>
             </div>
 
-            <div class="media-placeholder mt-4" style="height: 180px; border-color: var(--border-light); background: #f8fafc;">
-                <span style="font-size: 1.5rem; margin-bottom: 10px;">🔌</span>
-                <span style="font-size: 0.8rem; color: var(--text-body); font-weight: 600; letter-spacing: 1px;">[ DIAGRAM: TRI_BUS_WIRING_SCHEMATIC.PDF ]</span>
+            <div class="media-placeholder schematic mt-4">
+                <span class="icon-med">🔌</span>
+                <span class="label-small">[ DIAGRAM: TRI_BUS_WIRING_SCHEMATIC.PDF ]</span>
             </div>
         </section>
 
-        <section class="card component-section">
-            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+        <section class="card">
+            <div class="bom-header-flex">
                 <div>
                     <h2>Bill of Materials (BOM)</h2>
-                    <p style="margin: 0; font-size: 0.95rem;">Full hardware requirements for the standalone configuration.</p>
+                    <p class="font-small">Full hardware requirements for the standalone configuration.</p>
                 </div>
-                <div style="text-align: right;">
-                    <span class="tech-badge purple" style="margin-bottom: 0.25rem;">Untethered Config</span>
-                    <div style="font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 800; color: var(--text-main); line-height: 1;">$1,202.28</div>
+                <div class="price-tag-container">
+                    <span class="tech-badge purple">Untethered Config</span>
+                    <div class="price-amount">$1,202.28</div>
                 </div>
             </div>
 
@@ -87,25 +86,25 @@
                     <thead>
                         <tr>
                             <th>Component</th>
-                            <th style="text-align: center;">Qty</th>
-                            <th style="text-align: right;">Cost (USD)</th>
+                            <th class="text-center">Qty</th>
+                            <th class="text-right">Cost (USD)</th>
                             <th>Notes</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>NVIDIA Jetson Orin Nano Super</td><td style="text-align: center;">1</td><td style="text-align: right; font-family: monospace;">$249.00</td><td>Onboard GPU compute</td></tr>
-                        <tr><td>Anker SOLIX C300 Power Station</td><td style="text-align: center;">1</td><td style="text-align: right; font-family: monospace;">$159.99</td><td>Tri-Bus power distribution (288 Wh)</td></tr>
-                        <tr><td>Feetech STS-3215 Servos (12V)</td><td style="text-align: center;">17</td><td style="text-align: right; font-family: monospace;">$271.83</td><td>12 arms + 3 base + 2 neck</td></tr>
-                        <tr><td>Intel RealSense D435</td><td style="text-align: center;">1</td><td style="text-align: right; font-family: monospace;">$333.75</td><td>RGB-D perception &amp; SLAM</td></tr>
-                        <tr><td>IKEA RÅSKOG Utility Cart</td><td style="text-align: center;">1</td><td style="text-align: right; font-family: monospace;">$39.99</td><td>Mobile base platform</td></tr>
-                        <tr><td>4” Omni Wheels</td><td style="text-align: center;">3</td><td style="text-align: right; font-family: monospace;">$29.97</td><td>VEX-style omnidirectional mobility</td></tr>
-                        <tr><td>Wonrabai Serial Bus Driver Board</td><td style="text-align: center;">2</td><td style="text-align: right; font-family: monospace;">$21.10</td><td>Motor control via USB</td></tr>
-                        <tr><td>PLA Filament (3 kg)</td><td style="text-align: center;">1</td><td style="text-align: right; font-family: monospace;">$45.00</td><td>High-shell topology 3D printing</td></tr>
-                        <tr><td>Anker 4-in-1 USB-C Hub</td><td style="text-align: center;">1</td><td style="text-align: right; font-family: monospace;">$14.99</td><td>Peripheral connectivity</td></tr>
+                        <tr><td>NVIDIA Jetson Orin Nano Super</td><td class="text-center">1</td><td class="text-right font-mono">$249.00</td><td>Onboard GPU compute</td></tr>
+                        <tr><td>Anker SOLIX C300 Power Station</td><td class="text-center">1</td><td class="text-right font-mono">$159.99</td><td>Tri-Bus power distribution (288 Wh)</td></tr>
+                        <tr><td>Feetech STS-3215 Servos (12V)</td><td class="text-center">17</td><td class="text-right font-mono">$271.83</td><td>12 arms + 3 base + 2 neck</td></tr>
+                        <tr><td>Intel RealSense D435</td><td class="text-center">1</td><td class="text-right font-mono">$333.75</td><td>RGB-D perception &amp; SLAM</td></tr>
+                        <tr><td>IKEA RÅSKOG Utility Cart</td><td class="text-center">1</td><td class="text-right font-mono">$39.99</td><td>Mobile base platform</td></tr>
+                        <tr><td>4” Omni Wheels</td><td class="text-center">3</td><td class="text-right font-mono">$29.97</td><td>VEX-style omnidirectional mobility</td></tr>
+                        <tr><td>Wonrabai Serial Bus Driver Board</td><td class="text-center">2</td><td class="text-right font-mono">$21.10</td><td>Motor control via USB</td></tr>
+                        <tr><td>PLA Filament (3 kg)</td><td class="text-center">1</td><td class="text-right font-mono">$45.00</td><td>High-shell topology 3D printing</td></tr>
+                        <tr><td>Anker 4-in-1 USB-C Hub</td><td class="text-center">1</td><td class="text-right font-mono">$14.99</td><td>Peripheral connectivity</td></tr>
                     </tbody>
                 </table>
             </div>
-            <p class="mt-4" style="font-size: 0.85rem; color: var(--text-body);">* Cables, screws, microSD card, and minor parts bring the total to exactly $1,202.28. Full detailed BOM and sourcing links are available in the paper appendix.</p>
+            <p class="mt-4 font-small">* Cables, screws, microSD card, and minor parts bring the total to exactly $1,202.28. Full detailed BOM and sourcing links are available in the paper appendix.</p>
         </section>
 
         <section class="card">
@@ -118,9 +117,9 @@
                     <span>Port Verification</span>
                 </div>
                 <div class="terminal-body">
-                    <span style="color: #cbd5e1;">$</span> python lerobot/find_port.py<br><br>
+                    <span>$</span> python lerobot/find_port.py<br><br>
                     <span class="log-info">[INFO]</span> Scanning active USB interfaces...<br>
-                    <span class="log-info">[INFO]</span> Found motor boards on <span style="color: #fcd34d;">/dev/ttyACM0</span> and <span style="color: #fcd34d;">/dev/ttyACM1</span>
+                    <span class="log-info">[INFO]</span> Found motor boards on <span class="text-neon">/dev/ttyACM0</span> and <span class="text-neon">/dev/ttyACM1</span>
                 </div>
             </div>
         </section>

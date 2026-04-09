@@ -39,10 +39,7 @@
         </header>
 
         <div class="hero-image-wrapper">
-            <div class="media-placeholder hero-size">
-                <span class="icon-large">🤖</span>
-                <span class="label-hero">[ HERO: XLEROBOT_SYSTEM_OVERVIEW.JPG ]</span>
-            </div>
+            <img src="media/images/hero.png" alt="XLeRobot-Pro Platform Overview" class="full-width-image mt-4">
         </div>
 
         <section class="card neon-hover-cyan">
@@ -50,6 +47,13 @@
             <p>The barrier to entry for advanced robotics research has traditionally been gated by six-figure hardware. XLeRobot-Pro bridges the gap between simulation and reality by providing a robust, highly reproducible physical platform.</p>
             <p>By leveraging mostly 3D-printed components, affordable hardware, and a mobile base, labs can scale their data collection pipelines and deploy fleet-level reinforcement learning without massive capital constraints.</p>
             
+            <div class="media-placeholder video-size mt-4 mb-4">
+                    <video class="full-width-image" controls autoplay loop muted playsinline>
+                        <source src="media/video/IROS_Video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+            </div>
+
             <div class="mt-4 flex-wrap-gap">
                 <span class="tech-badge purple">Teleoperation</span>
                 <span class="tech-badge">Imitation Learning</span>
@@ -62,12 +66,14 @@
             <h2>System Capabilities</h2>
             <p>Native integration with the Hugging Face <strong>LeRobot</strong> framework allows for out-of-the-box data collection and policy training. See the system in action below.</p>
             
+            <img src="media/images/grid.png" alt="System Capabilities Long Gallery" class="full-width-image mt-4 mb-4">
+
             <div class="grid-2 mt-4">
                 <div>
-                    <div class="media-placeholder video-size">
-                        <div class="play-icon"></div>
-                        <span class="label-small">SYS.VID.01 - TELEOPERATION.MP4</span>
-                    </div>
+                    <video class="full-width-image" controls autoplay loop muted playsinline>
+                        <source src="media/video/chen.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                     <p class="mt-4 credits-text"><strong>Bimanual Teleoperation:</strong> Smooth leader-follower kinematics using dual SO-100 arms for high-fidelity dataset collection.</p>
                 </div>
 
@@ -85,25 +91,55 @@
             <h2>Hardware Architecture</h2>
             <p>Designed for modularity. Swap compute nodes, upgrade sensor suites, or modify the chassis parameters to fit your specific research parameters.</p>
             
-            <div class="gallery-grid">
-                <div class="media-placeholder gallery-size">
-                    <span class="icon-med">📷</span>
-                    <span class="label-small">[ GALLERY: FRONT_PROFILE ]</span>
+            <div class="grid-2 mt-4">
+                <div class="card card-no-margin">
+                    
+                    <h3 class="font-med mt-2">Front Profile</h3>
+                    <p class="font-small">Full system view showcasing the bimanual SO-100 arms and functionally graded chassis.</p>
                 </div>
                 
-                <div class="media-placeholder gallery-size">
-                    <span class="icon-med">📷</span>
-                    <span class="label-small">[ GALLERY: SENSOR_SUITE ]</span>
+                <div class="card card-no-margin">
+                    
+                    <h3 class="font-med mt-2">Sensor Suite</h3>
+                    <p class="font-small">Head-mounted RGB-D perception for SLAM navigation and high-fidelity environmental mapping.</p>
                 </div>
                 
-                <div class="media-placeholder gallery-size">
-                    <span class="icon-med">📷</span>
-                    <span class="label-small">[ GALLERY: COMPUTE_DECK ]</span>
+                <div class="card card-no-margin">
+                    
+                    <h3 class="font-med mt-2">Compute Deck</h3>
+                    <p class="font-small">Centralized Tri-Bus power routing and integrated NVIDIA Jetson Orin Nano for onboard GPU compute.</p>
                 </div>
 
-                <div class="media-placeholder gallery-size">
-                    <span class="icon-med">📷</span>
-                    <span class="label-small">[ GALLERY: END_EFFECTOR ]</span>
+                <div class="card card-no-margin">
+                    <h3 class="font-med mt-2">End-Effector</h3>
+                    <img src="media/images/gripper.png" alt="Parallel jaw gripper" class="full-width-image mt-4">
+                </div>
+            </div>
+        </section>
+
+        <section class="card neon-hover-pink">
+            <h2>Software Stack & Algorithms</h2>
+            <p>The XLeRobot-Pro utilizes a hybrid approach, merging precise classical robotics control with state-of-the-art end-to-end learning models.</p>
+
+            <div class="grid-2 mt-4">
+                <div class="card card-no-margin">
+                    <h3 class="font-med">Inverse Kinematics (IK)</h3>
+                     <img src="media/images/board_close.jpg" alt="IK circuit board close-up" class="full-width-image mt-4">
+                </div>
+
+                <div class="card card-no-margin">
+                    <h3 class="font-med">SLAM & Mapping</h3>
+                    <img src="media/images/nav.png" alt="SLAM Navigation mapped environment" class="full-width-image mt-4">
+                </div>
+
+                <div class="card card-no-margin">
+                    <h3 class="font-med">Color Segmentation</h3>
+                    <img src="media/images/ik.png" alt="Color segmentation vision processing" class="full-width-image mt-4">
+                </div>
+
+                <div class="card card-no-margin">
+                    <h3 class="font-med">LeRobot Integration</h3>
+                    <p class="font-small mt-2">Natively fully compatible with the Hugging Face LeRobot framework for standardized data collection, policy training, and community sharing.</p>
                 </div>
             </div>
         </section>

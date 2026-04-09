@@ -719,3 +719,14 @@ pre {
     color: var(--neon-pink); 
     background: transparent;
 }
+
+.full-width-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    margin-top: 1.5rem;
+    display: block;
+    /* Optional: Subtle glow to match your theme */
+    box-shadow: 0 0 20px rgba(0, 255, 242, 0.05);
+}
